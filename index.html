@@ -31,6 +31,7 @@
     
     <link rel="stylesheet" href="/styles-css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://getlaunchlist.com/js/widget.js" async></script>
 </head>
 <body>
     <!-- Floating Background Elements -->
@@ -64,7 +65,7 @@
                 <a href="#how-it-works">How it Works</a>
                 <a href="#app">App</a>
                 <a href="mailto:career.fluffwalk@gmail.com">Careers</a>
-                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Join Waitlist</button>
+                <button class="btn-primary" onclick="scrollToWaitlist()">Join Waitlist</button>
             </div>
             <div class="mobile-menu-toggle">
                 <span></span>
@@ -79,7 +80,6 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">Walks Full of Love.<br>Care You Can Trust.</h1>
-                <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Join Waitlist</button>
                 <div class="hero-stats">
                     <div class="stat">
                         <p>Fluffwalk connects pet parents with local, trusted walkers. Our app is launching soon!</p>
@@ -87,7 +87,6 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="/placeholder.svg?height=600&width=500" alt="Happy person walking a dog" class="hero-img">
                 <div class="floating-hearts">
                     <span class="heart">💖</span>
                     <span class="heart">💖</span>
@@ -168,7 +167,7 @@
                             <span>Direct messaging with walkers</span>
                         </div>
                     </div>
-                    <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Notify Me When Ready</button>
+                    <button class="btn-cta" onclick="window.location.href='mailto:help.fluffwalk@gmail.com'">Notify Me When Ready</button>
                 </div>
                 <div class="app-mockup">
                     <div class="phone">
@@ -181,26 +180,14 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="contact-section">
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist-section">
         <div class="container">
-            <h2 class="section-title">Join the Waitlist</h2>
-            <p class="section-subtitle">We're launching soon! Join the waitlist to be the first to know when we launch.</p>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Your email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-                </div>
-                <button type="submit" class="btn-cta">Send Message</button>
-            </form>
+            <div class="waitlist-content">
+                <h2 class="section-title">Join Our Waitlist</h2>
+                <p class="section-subtitle">Be the first to know when we launch in your area</p>
+                <div class="launchlist-widget" data-key-id="idx4Yh" data-height="180px"></div>
+            </div>
         </div>
     </section>
 
@@ -233,32 +220,8 @@
         </div>
     </footer>
 
-
     <script src="/js/script.js"></script>
     <script src="/js/config.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-      function initializeEmailJS() {
-        emailjs.init(window.emailConfig.publicKey);
-      }
-
-      function sendEmail(e) {
-        e.preventDefault();
-        emailjs.sendForm(window.emailConfig.serviceId, window.emailConfig.templateId, document.getElementById('contactForm'))
-          .then(function() {
-            alert('Message sent successfully!');
-            document.getElementById('contactForm').reset();
-          }, function(error) {
-            alert('Failed to send message. Please try again later.');
-          });
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        initializeEmailJS();
-        var form = document.getElementById('contactForm');
-        if(form) form.addEventListener('submit', sendEmail);
-      });
-    </script>
 </body>
 </html>
 

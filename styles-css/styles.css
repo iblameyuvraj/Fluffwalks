@@ -1301,3 +1301,30 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-dark);
 }
+
+/* Waitlist Section */
+.waitlist-section {
+    padding: 60px 0;
+    background: #FFF9C4;
+}
+
+.waitlist-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.waitlist-section .section-title {
+    margin-bottom: 15px;
+}
+
+.waitlist-section .section-subtitle {
+    margin-bottom: 30px;
+}
+
+.launchlist-widget {
+    min-height: 180px;
+    width: 100%;
+    margin: 0 auto;
+}

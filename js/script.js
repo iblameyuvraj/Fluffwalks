@@ -155,8 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
     type()
   }
 
-
-
   // Add loading animation for images
   const images = document.querySelectorAll("img")
   images.forEach((img) => {
@@ -170,6 +168,19 @@ document.addEventListener("DOMContentLoaded", () => {
     img.style.transform = "scale(0.9)"
     img.style.transition = "all 0.5s ease"
   })
+
+  // Handle smooth scrolling to waitlist section when coming from other pages
+  if (window.location.hash === '#waitlist') {
+    const waitlistSection = document.getElementById('waitlist');
+    if (waitlistSection) {
+      setTimeout(() => {
+        waitlistSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 100); // Small delay to ensure the page is fully loaded
+    }
+  }
 })
 
 // Add CSS for ripple effect
@@ -224,3 +235,13 @@ style.textContent = `
 `
 
 document.head.appendChild(style)
+
+function scrollToWaitlist() {
+    const waitlistSection = document.getElementById('waitlist');
+    if (waitlistSection) {
+        waitlistSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
