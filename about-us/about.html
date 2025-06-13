@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fluffwalk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FFD700;
+            --secondary: #FFD700;
+            --accent: #ffb6c1;
+            --light: #f9f4f5;
+            --dark: #4a3a51;
+            --success: #9ccc65;
+            --warning: #ffb74d;
+            --danger: #e57373;
+            --info: #4fc3f7;
+            --shadow: 0 4px 20px rgba(138, 94, 191, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff9fb;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-paw {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            color: var(--primary);
+            animation: float 15s infinite linear;
+        }
+
+        .paw-1 {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .paw-2 {
+            top: 70%;
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+        .paw-3 {
+            top: 40%;
+            left: 45%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 40px) rotate(20deg);
+            }
+            50% {
+                transform: translate(40px, 0) rotate(0deg);
+            }
+            75% {
+                transform: translate(20px, -40px) rotate(-20deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-brand .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 122, 162, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 122, 162, 0.4);
+        }
+
+        /* Main Content */
+        .legal-page {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255, 186, 193, 0.1), rgba(139, 95, 191, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legal-header h1 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .legal-subtitle {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-top: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .legal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .legal-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px dashed var(--accent);
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .legal-section h2 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .legal-section h2::before {
+            content: "•";
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .legal-section h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-section p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .legal-section ul {
+            padding-left: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-section li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .legal-section li::before {
+            content: "🐾";
+            position: absolute;
+            left: -1.8rem;
+            top: 0.1rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            min-width: 150px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: var(--light);
+            padding: 1.8rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            min-width: 30px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-brand .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+            color: #FFD700;
+        }
+
+        .footer-brand p {
+            font-size: 1.1rem;
+            max-width: 300px;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            min-width: 150px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #FFD700;
+            border-radius: 3px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: var(--transition);
+            font-size: 1.05rem;
+        }
+
+        .footer-column a:hover {
+            color: #FFD700;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            opacity: 0.8;
+            color: white;
+        }
+
+        .footer-bottom a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 1.2rem;
+            }
+            
+            .legal-header h1 {
+                font-size: 2.3rem;
+            }
+            
+            .legal-content {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            
+            .footer-links {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .legal-header {
+                padding: 1.5rem;
+            }
+            
+            .legal-content {
+                padding: 1.5rem;
+            }
+            
+            .legal-section h2 {
+                font-size: 1.6rem;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-paw paw-1">🐾</div>
+        <div class="floating-paw paw-2">🐾</div>
+        <div class="floating-paw paw-3">🐾</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">🐕 Fluffwalk</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#how-it-works">How it Works</a>
+                <a href="index.html#testimonials">Reviews</a>
+                <a href="index.html#app">App</a>
+                <button class="btn-primary">Join Waitlist</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Content -->
+    <main class="legal-page">
+        <div class="container">
+            <div class="legal-header">
+                <h1>About Fluffwalk</h1>
+                <p class="legal-subtitle">Our Story, Mission, and Values</p>
+                <div class="legal-icon">💝</div>
+            </div>
+
+            <div class="legal-content">
+                <section class="legal-section">
+                    <h2>Our Story</h2>
+                    <p>Fluffwalk was born from a simple observation: every pet deserves the best care, and every pet parent deserves peace of mind. Founded in 2024, we set out to revolutionize the pet walking industry by creating a platform that connects loving pet parents with trusted, professional walkers.</p>
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <span class="badge-icon">❤️</span>
+                            <span>Pet First</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="badge-icon">🤝</span>
+                            <span>Community</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="badge-icon">🌟</span>
+                            <span>Excellence</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Our Mission</h2>
+                    <p>At Fluffwalk, we're on a mission to make pet care accessible, reliable, and joyful. We believe that every pet deserves:</p>
+                    <ul>
+                        <li>Regular exercise and outdoor adventures</li>
+                        <li>Professional, loving care</li>
+                        <li>Safe and secure walking experiences</li>
+                        <li>Personalized attention and care</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Our Values</h2>
+                    <h3>Pet-First Approach:</h3>
+                    <ul>
+                        <li>Every decision we make prioritizes pet well-being</li>
+                        <li>Rigorous walker screening and training</li>
+                        <li>Continuous quality monitoring and feedback</li>
+                        <li>Regular safety protocol updates</li>
+                    </ul>
+
+                    <h3>Community Building:</h3>
+                    <ul>
+                        <li>Creating connections between pet lovers</li>
+                        <li>Supporting local pet communities</li>
+                        <li>Fostering trust and reliability</li>
+                        <li>Building lasting relationships</li>
+                    </ul>
+
+                    <h3>Innovation & Excellence:</h3>
+                    <ul>
+                        <li>Cutting-edge technology for better service</li>
+                        <li>Continuous platform improvements</li>
+                        <li>Regular feature updates based on user feedback</li>
+                        <li>Commitment to industry best practices</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Our Team</h2>
+                    <p>Behind Fluffwalk is a team of passionate pet lovers, tech innovators, and customer service experts. We're united by our love for animals and our commitment to making pet care better for everyone.</p>
+                    <ul>
+                        <li><strong>Pet Care Experts:</strong> Veterinary professionals and certified trainers</li>
+                        <li><strong>Tech Innovators:</strong> Developers and designers creating the best user experience</li>
+                        <li><strong>Customer Support:</strong> Dedicated team members ready to help</li>
+                        <li><strong>Community Managers:</strong> Building and nurturing our pet-loving community</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Our Impact</h2>
+                    <p>Since our launch, we've made a significant impact in the pet care industry:</p>
+                    <ul>
+                        <li>Thousands of happy pets walked daily</li>
+                        <li>Hundreds of professional walkers employed</li>
+                        <li>Countless pet parents with peace of mind</li>
+                        <li>Growing community of pet lovers</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Join Our Journey</h2>
+                    <p>We're always looking for passionate individuals to join our mission. Whether you're a pet lover, tech enthusiast, or customer service expert, there might be a place for you at Fluffwalk.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> Email: help.fluffwalk@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> Phone: Adithya Sharma: 7892196154</p>
+                        <p><i class="fas fa-clock"></i> Response Time: Within 48 hours</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">🐕 Fluffwalk</span>
+                    <p>Connecting pets with <br> love, one walk at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Follow Us</h4>
+                        <a href="https://x.com/fluffwalks" target="_blank">X</a>
+                        <a href="https://www.instagram.com/fluffwalks" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/fluffwalks" target="_blank">Facebook</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="about.html">About Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fluffwalk. Made by <a href="https://yuvraj.site" target="_blank">Yuvraj</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add subtle animations to section headers when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.legal-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+            
+            // Floating paws animation
+            const paws = document.querySelectorAll('.floating-paw');
+            paws.forEach((paw, index) => {
+                paw.style.animationDelay = `${index * 3}s`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles-css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-paw paw-1">🐾</div>
+        <div class="floating-paw paw-2">🐾</div>
+        <div class="floating-paw paw-3">🐾</div>
+        <div class="floating-cloud cloud-1">☁️</div>
+        <div class="floating-cloud cloud-2">☁️</div>
+        <div class="floating-bone bone-1">🦴</div>
+        <div class="floating-bone bone-2">🦴</div>
+        <div class="floating-heart heart-1">❤️</div>
+        <div class="floating-heart heart-2">❤️</div>
+    </div>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="/assets/01.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="logo">🐕 <script>document.write(window.appConfig?.siteName || 'Fluffwalk')</script></span>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">How it Works</a>
+                <a href="#app">App</a>
+                <a href="mailto:career.fluffwalk@gmail.com">Careers</a>
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Join Waitlist</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Walks Full of Love.<br>Care You Can Trust.</h1>
+                <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Join Waitlist</button>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <p>Fluffwalk connects pet parents with local, trusted walkers. Our app is launching soon!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/placeholder.svg?height=600&width=500" alt="Happy person walking a dog" class="hero-img">
+                <div class="floating-hearts">
+                    <span class="heart">💖</span>
+                    <span class="heart">💖</span>
+                    <span class="heart">💖</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Fluffwalk Works</h2>
+            <p class="section-subtitle">Three simple steps to give your pet the perfect walk</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 100 100" class="icon">
+                            <circle cx="50" cy="50" r="40" fill="#FFE4E1" stroke="#FF69B4" stroke-width="2"/>
+                            <path d="M35 45 L45 55 L65 35" stroke="#FF69B4" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Find a Walker</h3>
+                    <p>Browse trusted, verified walkers in your neighborhood with detailed profiles and reviews.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 100 100" class="icon">
+                            <rect x="20" y="25" width="60" height="50" rx="5" fill="#E6F3FF" stroke="#4A90E2" stroke-width="2"/>
+                            <line x1="30" y1="35" x2="70" y2="35" stroke="#4A90E2" stroke-width="2"/>
+                            <line x1="30" y1="45" x2="60" y2="45" stroke="#4A90E2" stroke-width="2"/>
+                            <line x1="30" y1="55" x2="65" y2="55" stroke="#4A90E2" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Schedule a Walk</h3>
+                    <p>Book walks that fit your schedule. One-time or recurring - whatever works for you and your pet.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 100 100" class="icon">
+                            <circle cx="50" cy="50" r="35" fill="#F0FFF0" stroke="#32CD32" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="8" fill="#32CD32"/>
+                            <path d="M50 20 L55 30 L50 40 L45 30 Z" fill="#32CD32"/>
+                        </svg>
+                    </div>
+                    <h3>Track in Real-Time</h3>
+                    <p>Get live updates, photos, and GPS tracking so you know your furry friend is safe and happy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Teaser Section -->
+    <section id="app" class="app-teaser">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <h2>Coming Soon to iOS & Android</h2>
+                    <p>Get ready for the most adorable way to manage your pet's walks. Our app will make booking, tracking, and connecting easier than ever.</p>
+                    <div class="app-features">
+                        <div class="feature">
+                            <span class="feature-icon">📱</span>
+                            <span>Easy booking & scheduling</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">📍</span>
+                            <span>Real-time GPS tracking</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">📸</span>
+                            <span>Photo updates during walks</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">💬</span>
+                            <span>Direct messaging with walkers</span>
+                        </div>
+                    </div>
+                    <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Notify Me When Ready</button>
+                </div>
+                <div class="app-mockup">
+                    <div class="phone">
+                        <div class="phone-screen">
+                            <img src="/assets/logo.svg?height=400&width=200" alt="Fluffwalk App Screenshot" class="app-screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Join the Waitlist</h2>
+            <p class="section-subtitle">We're launching soon! Join the waitlist to be the first to know when we launch.</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                </div>
+                <button type="submit" class="btn-cta">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">🐕 <script>document.write(window.appConfig?.siteName || 'Fluffwalk')</script></span>
+                    <p>Connecting pets with <br> love, one walk at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Follow Us</h4>
+                        <a href="https://x.com/fluffwalks" target="_blank">X</a>
+                        <a href="https://www.instagram.com/fluffwalks" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/fluffwalks" target="_blank">Facebook</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="/terms/terms.html">Terms & Conditions</a>
+                        <a href="/privacy/privacy.html">Privacy Policy</a>
+                        <a href="/about/about.html">about us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 <script>document.write(window.appConfig?.siteName || 'Fluffwalk')</script>. Made by <a href="https://yuvraj.site" target="_blank" style="color: #ff69b4; text-decoration: none;">Yuvraj</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/js/script.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      function initializeEmailJS() {
+        emailjs.init(window.emailConfig.publicKey);
+      }
+
+      function sendEmail(e) {
+        e.preventDefault();
+        emailjs.sendForm(window.emailConfig.serviceId, window.emailConfig.templateId, document.getElementById('contactForm'))
+          .then(function() {
+            alert('Message sent successfully!');
+            document.getElementById('contactForm').reset();
+          }, function(error) {
+            alert('Failed to send message. Please try again later.');
+          });
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        initializeEmailJS();
+        var form = document.getElementById('contactForm');
+        if(form) form.addEventListener('submit', sendEmail);
+      });
+    </script>
+</body>
+</html>
